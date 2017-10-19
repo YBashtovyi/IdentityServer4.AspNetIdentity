@@ -1,7 +1,7 @@
 [submodule "IdentityServer4"]
 	path = IdentityServer4
 	url = https://github.com/IdentityServer/IdentityServer4.git
-	branch = dev
+	branch = release
 [submodule "IdentityServer4.EntityFramework"]
 	path = IdentityServer4.EntityFramework
 	url = https://github.com/IdentityServer/IdentityServer4.EntityFramework.git
