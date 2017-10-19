@@ -181,7 +181,7 @@ namespace Host.Configuration
                     ClientName = "MVC Manual",
                     ClientUri = "http://identityserver.io",
 
-                    AllowedGrantTypes = GrantTypes.Implicit,
+                    AllowedGrantTypes = IdentityServer4.Models.GrantTypes.Implicit,
 
                     RedirectUris = { "http://localhost:44077/home/callback" },
                     FrontChannelLogoutUri = "http://localhost:44077/signout-oidc",
@@ -205,7 +205,7 @@ namespace Host.Configuration
                         new IdentityServer4.Models.Secret("secret".Sha256())
                     },
                     
-                    AllowedGrantTypes = GrantTypes.Hybrid,
+                    AllowedGrantTypes = dentityServer4.Models.GrantTypes.Hybrid,
                     AllowAccessTokensViaBrowser = false,
 
                     RedirectUris = { "http://localhost:21402/signin-oidc" },
@@ -233,7 +233,7 @@ namespace Host.Configuration
                     ClientUri = "http://identityserver.io",
                     //LogoUri = "https://pbs.twimg.com/profile_images/1612989113/Ki-hanja_400x400.png",
 
-                    AllowedGrantTypes = GrantTypes.Implicit,
+                    AllowedGrantTypes = IdentityServer4.Models.GrantTypes.Implicit,
                     AllowAccessTokensViaBrowser = true,
 
                     RedirectUris = { "http://localhost:28895/index.html" },
@@ -250,7 +250,7 @@ namespace Host.Configuration
                     ClientUri = "http://identityserver.io",
                     //LogoUri = "https://pbs.twimg.com/profile_images/1612989113/Ki-hanja_400x400.png",
 
-                    AllowedGrantTypes = GrantTypes.Implicit,
+                    AllowedGrantTypes = IdentityServer4.Models.GrantTypes.Implicit,
                     AllowAccessTokensViaBrowser = true,
                     RequireClientSecret = false,
                     AccessTokenType = AccessTokenType.Jwt,
