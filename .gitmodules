@@ -1,0 +1,4 @@
+[submodule "IdentityServer4"]
+	path = IdentityServer4
+	url = https://github.com/IdentityServer/IdentityServer4.git
+	branch = dev
