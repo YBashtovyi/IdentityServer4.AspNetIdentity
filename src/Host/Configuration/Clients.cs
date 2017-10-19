@@ -22,10 +22,10 @@ namespace Host.Configuration
                     ClientId = "client",
                     ClientSecrets =
                     {
-                        new Secret("secret".Sha256())
+                        new IdentityServer4.Models.Secret("secret".Sha256())
                     },
 
-                    AllowedGrantTypes = GrantTypes.ClientCredentials,
+                    AllowedGrantTypes = IdentityServer4.Models.GrantTypes.ClientCredentials,
                     AllowedScopes = { "api1", "api2.read_only" }
                 },
 
@@ -37,14 +37,14 @@ namespace Host.Configuration
                     ClientId = "client.jwt",
                     ClientSecrets =
                     {
-                        new Secret
+                        new IdentityServer4.Models.Secret
                         {
                             Type = IdentityServerConstants.SecretTypes.X509CertificateBase64,
                             Value = "MIIDATCCAe2gAwIBAgIQoHUYAquk9rBJcq8W+F0FAzAJBgUrDgMCHQUAMBIxEDAOBgNVBAMTB0RldlJvb3QwHhcNMTAwMTIwMjMwMDAwWhcNMjAwMTIwMjMwMDAwWjARMQ8wDQYDVQQDEwZDbGllbnQwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQDSaY4x1eXqjHF1iXQcF3pbFrIbmNw19w/IdOQxbavmuPbhY7jX0IORu/GQiHjmhqWt8F4G7KGLhXLC1j7rXdDmxXRyVJBZBTEaSYukuX7zGeUXscdpgODLQVay/0hUGz54aDZPAhtBHaYbog+yH10sCXgV1Mxtzx3dGelA6pPwiAmXwFxjJ1HGsS/hdbt+vgXhdlzud3ZSfyI/TJAnFeKxsmbJUyqMfoBl1zFKG4MOvgHhBjekp+r8gYNGknMYu9JDFr1ue0wylaw9UwG8ZXAkYmYbn2wN/CpJl3gJgX42/9g87uLvtVAmz5L+rZQTlS1ibv54ScR2lcRpGQiQav/LAgMBAAGjXDBaMBMGA1UdJQQMMAoGCCsGAQUFBwMCMEMGA1UdAQQ8MDqAENIWANpX5DZ3bX3WvoDfy0GhFDASMRAwDgYDVQQDEwdEZXZSb290ghAsWTt7E82DjU1E1p427Qj2MAkGBSsOAwIdBQADggEBADLje0qbqGVPaZHINLn+WSM2czZk0b5NG80btp7arjgDYoWBIe2TSOkkApTRhLPfmZTsaiI3Ro/64q+Dk3z3Kt7w+grHqu5nYhsn7xQFAQUf3y2KcJnRdIEk0jrLM4vgIzYdXsoC6YO+9QnlkNqcN36Y8IpSVSTda6gRKvGXiAhu42e2Qey/WNMFOL+YzMXGt/nDHL/qRKsuXBOarIb++43DV3YnxGTx22llhOnPpuZ9/gnNY7KLjODaiEciKhaKqt/b57mTEz4jTF4kIg6BP03MUfDXeVlM1Qf1jB43G2QQ19n5lUiqTpmQkcfLfyci2uBZ8BkOhXr3Vk9HIk/xBXQ="
                         }
                     },
 
-                    AllowedGrantTypes = GrantTypes.ClientCredentials,
+                    AllowedGrantTypes = IdentityServer4.Models.GrantTypes.ClientCredentials,
                     AllowedScopes = { "api1", "api2.read_only" }
                 },
 
@@ -56,7 +56,7 @@ namespace Host.Configuration
                     ClientId = "client.custom",
                     ClientSecrets = 
                     {
-                        new Secret("secret".Sha256())
+                        new IdentityServer4.Models.Secret("secret".Sha256())
                     },
 
                     AllowedGrantTypes = { "custom", "custom.nosubject" },
@@ -71,15 +71,16 @@ namespace Host.Configuration
                     ClientId = "roclient",
                     ClientSecrets = 
                     {
-                        new Secret("secret".Sha256())
+                        new IdentityServer4.Models.Secret("secret".Sha256())
                     },
 
-                    AllowedGrantTypes = GrantTypes.ResourceOwnerPassword,
+                    AllowedGrantTypes = IdentityServer4.Models.GrantTypes.ResourceOwnerPassword,
 
                     AllowOfflineAccess = true,
                     AllowedScopes = 
                     {
                         IdentityServerConstants.StandardScopes.OpenId,
+                        IdentityServerConstants.StandardScopes.OfflineAccess,
                         "custom.profile",
                         "api1", "api2.read_only"
                     }
@@ -93,7 +94,7 @@ namespace Host.Configuration
                     ClientId = "roclient.public",
                     RequireClientSecret = false,
 
-                    AllowedGrantTypes = GrantTypes.ResourceOwnerPassword,
+                    AllowedGrantTypes = IdentityServer4.Models.GrantTypes.ResourceOwnerPassword,
 
                     AllowOfflineAccess = true,
                     AllowedScopes = 
@@ -113,7 +114,7 @@ namespace Host.Configuration
                     ClientName = "Console Hybrid with PKCE Sample",
                     RequireClientSecret = false,
 
-                    AllowedGrantTypes = GrantTypes.Hybrid,
+                    AllowedGrantTypes = IdentityServer4.Models.GrantTypes.Hybrid,
                     RequirePkce = true,
 
                     RedirectUris = { "http://127.0.0.1" },
@@ -137,10 +138,10 @@ namespace Host.Configuration
                     ClientId = "roclient.reference",
                     ClientSecrets = 
                     {
-                        new Secret("secret".Sha256())
+                        new IdentityServer4.Models.Secret("secret".Sha256())
                     },
 
-                    AllowedGrantTypes = GrantTypes.ResourceOwnerPassword,
+                    AllowedGrantTypes = IdentityServer4.Models.GrantTypes.ResourceOwnerPassword,
                     AllowedScopes = { "api1", "api2.read_only" },
 
                     AccessTokenType = AccessTokenType.Reference
@@ -201,7 +202,7 @@ namespace Host.Configuration
 
                     ClientSecrets = 
                     {
-                        new Secret("secret".Sha256())
+                        new IdentityServer4.Models.Secret("secret".Sha256())
                     },
                     
                     AllowedGrantTypes = GrantTypes.Hybrid,
